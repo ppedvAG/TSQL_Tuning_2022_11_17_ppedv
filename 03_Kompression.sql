@@ -59,3 +59,8 @@ SELECT * FROM KundenUmsatz;
 
 --Bestimmte Partition komprimieren
 ALTER TABLE pTable REBUILD PARTITION = 1 WITH(DATA_COMPRESSION = ROW);
+
+SELECT count(*)*8/1024 AS 'Data Cache Size(MB)', db_name(database_id)
+FROM sys.dm_os_buffer_descriptors
+GROUP BY db_name(database_id) ,database_id
+ORDER BY 'Data Cache Size(MB)' DESC
