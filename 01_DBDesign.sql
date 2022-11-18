@@ -104,6 +104,8 @@ DBCC showcontig('T3'); --55 Seiten statt 50, 94.32% Seitendichte statt 93.87%, D
 --float: 4B bei kurzen Zahlen, 8B bei langen Zahlen
 --decimal(X, Y): je weniger Platz desto weniger Byte
 
+--tinyint: 1B, smallint: 2B, int: 4B, bigint: 8B
+
 USE Northwind;
 DBCC showcontig('Customers'); --96.98% (durch breite Datensätze)
 
